@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.5); /* Transparent white */
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            max-width: 500px;
+            width: 90%;
+        }
+        .field{
+            font-weight:600;
+        }
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.3s ease;
+
+        }
+        input[type="text"]:focus {
+            border-color: #3498db;
+        }
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        img {
+            margin-top: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>IRIS FLOWER DETECTION</h1>
+        <form method="POST" action="{{url_for('home')}}">
+            <label class="field">Sepal Length:</label>
+            <input type="text" id='a' name="a" placeholder="4.30 - 7.90" required><br>
+            <label class="field">Sepal Width:</label>
+            <input type="text" id="b" name='b' placeholder="2.00 - 4.40" required><br>
+            <label class="field">Petal Length:</label>
+            <input type="text" id="c" name='c' placeholder="1.0 - 6.90" required><br>
+            <label class="field">Petal Width:</label>
+            <input type="text" id="d" name='d' placeholder="0.10 - 2.50" required><br><br>
+            <input type="submit" value='Predict!'>
+        </form>
+        <img src="https://housing.com/news/wp-content/uploads/2022/11/iris-flower-compressed.jpg" alt="flower">
+    </div>
+</body>
+</html>
